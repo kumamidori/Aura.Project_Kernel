@@ -1,7 +1,9 @@
 <?php
 namespace Aura\Project_Kernel;
 
-class ProjectTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ProjectTest extends TestCase
 {
     protected $project;
 
@@ -113,7 +115,7 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
         }
     ]';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->composer = json_decode($this->composer);
         $this->installed = json_decode($this->installed);
@@ -127,7 +129,7 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
 
     public function testNoComposer()
     {
-        $this->setExpectedException('Aura\Project_Kernel\Exception');
+        $this->expectException('Aura\Project_Kernel\Exception');
         $this->project = new Project(
             $this->path,
             $this->mode,

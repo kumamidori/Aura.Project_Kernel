@@ -1,7 +1,9 @@
 <?php
 namespace Aura\Project_Kernel;
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class FactoryTest extends TestCase
 {
     public function testNewKernel()
     {
